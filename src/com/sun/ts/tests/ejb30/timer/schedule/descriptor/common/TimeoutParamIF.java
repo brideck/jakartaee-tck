@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2008, 2020 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2008, 2021 Oracle and/or its affiliates. All rights reserved.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License v. 2.0, which is available at
@@ -34,13 +34,9 @@ public interface TimeoutParamIF {
 
   public static final String AUTO_TIMER_SUFFIX = ".auto";
 
-  public Timer createSecondLaterTimer(String name);
+  public Timer createTwoSecondsLaterTimer(String name);
 
-  public Timer createSecondLaterTimer(String name, int seconds);
-
-  public Timer createSecondLaterTimer(TimerConfig timerConfig);
-
-  public Timer createSecondLaterTimer(TimerConfig timerConfig, int seconds);
+  public Timer createTwoSecondsLaterTimer(TimerConfig timerConfig);
 
   public void cancelAllTimers();
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2013, 2018, 2020 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2013, 2021 Oracle and/or its affiliates. All rights reserved.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License v. 2.0, which is available at
@@ -44,7 +44,7 @@ public class Client extends ClientBase {
   /*
    * @testName: createRollback
    * 
-   * @test_Strategy: create a timer that is to expire in 1 second, and 1.5
+   * @test_Strategy: create a timer that is to expire in 2 seconds, and 2.5
    * seconds later, set the transaction to rollback only. The timer must not be
    * present, and no timeout event for this timer.
    */

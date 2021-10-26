@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2013, 2018, 2020 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2013, 2021 Oracle and/or its affiliates. All rights reserved.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License v. 2.0, which is available at
@@ -163,8 +163,8 @@ public class LockSingletonTimerBeanBase implements TimerIF {
       String key = it.next();
       Helper.getLogger().fine("About to getTimers from TimerService " + key);
       TimerService ts = timerServiceMap.get(key);
-      // TimerUtil.createSecondLaterTimer(ts);
-      TimerUtil.createSecondLaterTimer(ts, new TimerConfig(null, false));
+      // TimerUtil.createTwoSecondsLaterTimer(ts);
+      TimerUtil.createTwoSecondsLaterTimer(ts, new TimerConfig(null, false));
 
       for (Object o : ts.getTimers()) {
         Timer t = (Timer) o;

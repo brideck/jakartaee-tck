@@ -254,43 +254,27 @@ public final class TimerUtil {
     return timer;
   }
 
-  public static Timer createSecondLaterTimer(TimerService timerService) {
-    return createSecondLaterTimer(timerService, (TimerInfo) null);
+  public static Timer createTwoSecondsLaterTimer(TimerService timerService) {
+    return createTwoSecondsLaterTimer(timerService, (TimerInfo) null);
   }
 
-  public static Timer createSecondLaterTimer(TimerService timerService,
+  public static Timer createTwoSecondsLaterTimer(TimerService timerService,
       String testName) {
-    return createSecondLaterTimer(timerService, new TimerInfo(testName));
+    return createTwoSecondsLaterTimer(timerService, new TimerInfo(testName));
   }
 
-  public static Timer createSecondLaterTimer(TimerService timerService,
-      String testName, int seconds) {
-    return createSecondLaterTimer(timerService, new TimerInfo(testName),
-            seconds);
-  }
-
-  public static Timer createSecondLaterTimer(TimerService timerService,
+  public static Timer createTwoSecondsLaterTimer(TimerService timerService,
       TimerConfig timerConfig) {
-    return createSecondLaterTimer(timerService, timerConfig, 1);
-  }
-
-  public static Timer createSecondLaterTimer(TimerService timerService,
-      TimerConfig timerConfig, int seconds) {
     Calendar cal = Calendar.getInstance();
-    cal.add(Calendar.SECOND, seconds); // certain seconds later
+    cal.add(Calendar.SECOND, 2); // two seconds later
     return timerService.createCalendarTimer(getPreciseScheduleExpression(cal),
         timerConfig);
   }
 
-  public static Timer createSecondLaterTimer(TimerService timerService,
+  public static Timer createTwoSecondsLaterTimer(TimerService timerService,
       TimerInfo info) {
-    return createSecondLaterTimer(timerService, info, 1);
-  }
-
-  public static Timer createSecondLaterTimer(TimerService timerService,
-      TimerInfo info, int seconds) {
     Calendar cal = Calendar.getInstance();
-    cal.add(Calendar.SECOND, seconds); // certain seconds later
+    cal.add(Calendar.SECOND, 2); // two seconds later
     return timerService.createCalendarTimer(getPreciseScheduleExpression(cal),
         new TimerConfig(info, true));
   }

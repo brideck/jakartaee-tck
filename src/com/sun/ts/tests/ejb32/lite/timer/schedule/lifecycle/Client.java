@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2013, 2018, 2020 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2013, 2021 Oracle and/or its affiliates. All rights reserved.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License v. 2.0, which is available at
@@ -148,7 +148,7 @@ public class Client extends ClientBase {
    */
   public void timerEquals() {
     ScheduleExpression exp = new ScheduleExpression();
-    // Timer t1 = scheduleBean.createSecondLaterTimer(t1Name);
+    // Timer t1 = scheduleBean.createTwoSecondsLaterTimer(t1Name);
     // Timer t2 = scheduleBean.createFarFutureTimer(getTestName());
     Timer t2 = scheduleBean.createFarFutureTimer(
         new TimerConfig(new TimerInfo(getTestName()), false));
@@ -160,7 +160,7 @@ public class Client extends ClientBase {
         new TimerConfig(new TimerInfo(getTestName()), false));
     String t1Name = getTestName() + "t1";
     Timer t1 = scheduleBean
-        .createSecondLaterTimer(new TimerConfig(new TimerInfo(t1Name), false));
+        .createTwoSecondsLaterTimer(new TimerConfig(new TimerInfo(t1Name), false));
     Timer t1Found = scheduleBean.findTimer(t1Name);
     assertEquals("Compare timer to itself.", t1, t1);
     assertEquals("Compare timer to t1Found.", t1, t1Found);
@@ -191,8 +191,8 @@ public class Client extends ClientBase {
    * @test_Strategy: create a timer and wait for its completion
    */
   public void createAndComplete() {
-    // scheduleBean.createSecondLaterTimer(getTestName());
-    scheduleBean.createSecondLaterTimer(
+    // scheduleBean.createTwoSecondsLaterTimer(getTestName());
+    scheduleBean.createTwoSecondsLaterTimer(
         new TimerConfig(new TimerInfo(getTestName()), false));
     appendReason("Created a timer and wait for its completion.");
     passIfTimeoutOnce();
@@ -205,8 +205,8 @@ public class Client extends ClientBase {
    * jakarta.ejb.NoSuchObjectLocalException
    */
   public void completeAndNoSuchObjectLocalException() {
-    // Timer t = scheduleBean.createSecondLaterTimer(getTestName());
-    Timer t = scheduleBean.createSecondLaterTimer(
+    // Timer t = scheduleBean.createTwoSecondsLaterTimer(getTestName());
+    Timer t = scheduleBean.createTwoSecondsLaterTimer(
         new TimerConfig(new TimerInfo(getTestName()), false));
     passIfTimeoutOnce();
     appendReason(scheduleBean.passIfNoSuchObjectLocalException(t));

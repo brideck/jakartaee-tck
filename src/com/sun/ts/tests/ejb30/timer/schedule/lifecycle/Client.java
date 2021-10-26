@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2008, 2020 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2008, 2021 Oracle and/or its affiliates. All rights reserved.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License v. 2.0, which is available at
@@ -154,7 +154,7 @@ public class Client extends ClientBase {
     Timer t3 = scheduleBean.createTimer(exp, getTestName());
     Timer t4 = scheduleBean.createTimer(exp, getTestName());
     String t1Name = getTestName() + "t1";
-    Timer t1 = scheduleBean.createSecondLaterTimer(t1Name);
+    Timer t1 = scheduleBean.createTwoSecondsLaterTimer(t1Name);
     Timer t1Found = scheduleBean.findTimer(t1Name);
     assertEquals("Compare timer to itself.", t1, t1);
     assertEquals("Compare timer to t1Found.", t1, t1Found);
@@ -187,7 +187,7 @@ public class Client extends ClientBase {
    */
   public void timerHash() throws IOException, ClassNotFoundException {
     deleteTimerStore();
-    Timer t = scheduleBean.createSecondLaterTimer(getTestName());
+    Timer t = scheduleBean.createTwoSecondsLaterTimer(getTestName());
     TimerHandle handle = scheduleBean.getTimerHandle(t);
     HashSet<Timer> h = new HashSet<Timer>();
     h.add(t);
@@ -212,7 +212,7 @@ public class Client extends ClientBase {
    * @test_Strategy: create a timer and wait for its completion
    */
   public void createAndComplete() {
-    scheduleBean.createSecondLaterTimer(getTestName());
+    scheduleBean.createTwoSecondsLaterTimer(getTestName());
     appendReason("Created a timer and wait for its completion.");
     passIfTimeoutOnce();
   }
@@ -224,7 +224,7 @@ public class Client extends ClientBase {
    * jakarta.ejb.NoSuchObjectLocalException
    */
   public void completeAndNoSuchObjectLocalException() {
-    Timer t = scheduleBean.createSecondLaterTimer(getTestName());
+    Timer t = scheduleBean.createTwoSecondsLaterTimer(getTestName());
     passIfTimeoutOnce();
     appendReason(scheduleBean.passIfNoSuchObjectLocalException(t));
   }

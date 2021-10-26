@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2013, 2018, 2020 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2013, 2021 Oracle and/or its affiliates. All rights reserved.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License v. 2.0, which is available at
@@ -52,7 +52,7 @@ abstract public class ClientBase
   /*
    * testName: createRollback
    * 
-   * @test_Strategy: create a timer that is to expire in 1 second, and 1.5
+   * @test_Strategy: create a timer that is to expire in 2 seconds, and 2.5
    * seconds later, set the transaction to rollback only. The timer must not be
    * present, and no timeout event for this timer.
    */
@@ -79,7 +79,7 @@ abstract public class ClientBase
 
   public void createRollbackTxPropagation() throws Exception {
     ut.begin();
-    Timer timer = scheduleBean.createSecondLaterTimer(getTimerConfig(), 2);
+    Timer timer = scheduleBean.createTwoSecondsLaterTimer(getTimerConfig());
     TestUtil.sleep(3000); // 3 seconds
     ut.rollback();
     assertEquals("contains the timer? " + timer, false,
@@ -95,7 +95,7 @@ abstract public class ClientBase
 
   public void createRollbackTxPropagationBMT() throws Exception {
     ut.begin();
-    scheduleBMTBean.createSecondLaterTimer(getTimerConfig(), 2);
+    scheduleBMTBean.createTwoSecondsLaterTimer(getTimerConfig());
     TestUtil.sleep(3000); // 3 seconds
     ut.rollback();
     passIfTimeout();
@@ -150,7 +150,7 @@ abstract public class ClientBase
    * @test_Strategy: See above. No propagation for BMT
    */
   public void cancelRollbackPropagationBMT() throws Exception {
-    Timer timer = scheduleBMTBean.createSecondLaterTimer(getTimerConfig());
+    Timer timer = scheduleBMTBean.createTwoSecondsLaterTimer(getTimerConfig());
     String result = "This timer must not be present, since the tx is not "
         + "propagated to BMT bean: " + timer;
     ut.begin();
@@ -198,7 +198,7 @@ abstract public class ClientBase
    * @test_Strategy: invoke the BMT bean to create a timer without tx.
    */
   public void createTimerWithoutTx() {
-    scheduleBMTBean.createSecondLaterTimer(getTimerConfig(), 2);
+    scheduleBMTBean.createTwoSecondsLaterTimer(getTimerConfig());
     passIfTimeout();
   }
 
@@ -210,7 +210,7 @@ abstract public class ClientBase
    */
   public void createTimerWithoutTxHavingClientTx() throws Exception {
     ut.begin();
-    scheduleBMTBean.createSecondLaterTimer(getTimerConfig(), 2);
+    scheduleBMTBean.createTwoSecondsLaterTimer(getTimerConfig());
     ut.commit();
     passIfTimeout();
   }
@@ -232,7 +232,7 @@ abstract public class ClientBase
   private void timeoutRollback(ScheduleTxBeanBase b) {
     appendReason(
         "If the transaction rolls back in timeout method, must retry at least once.");
-    Timer timer = b.createSecondLaterTimer(getTimerConfig(), 2);
+    Timer timer = b.createTwoSecondsLaterTimer(getTimerConfig());
     TestUtil.sleep((int) WAIT_FOR_TIMEOUT_STATUS);
     List<String> a = statusSingleton.getRecords(getTestName());
     appendReason("timeout callback result: ", a);

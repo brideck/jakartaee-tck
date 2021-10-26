@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2009, 2020 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2009, 2021 Oracle and/or its affiliates. All rights reserved.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License v. 2.0, which is available at
@@ -170,7 +170,7 @@ public class ClientBase extends com.sun.ts.tests.ejb30.timer.common.ClientBase {
     // around-timeout-related records,
     // separate from timeout records.
     statusSingleton.removeRecords(getAroundTimeoutRecordKey());
-    b.createSecondLaterTimer(getTestName(), 2);
+    b.createTwoSecondsLaterTimer(getTestName());
     checkAndClearAroundTimeoutRecords(expectedAroundTimeout,
         getAroundTimeoutRecordKey(), timeoutInvoked);
   }

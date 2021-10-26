@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2013, 2018, 2020 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2013, 2021 Oracle and/or its affiliates. All rights reserved.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License v. 2.0, which is available at
@@ -58,8 +58,8 @@ abstract public class ScheduleTxBeanBase
 
   public String createRollback(TimerConfig timerConfig) {
     beginTransaction();
-    Timer timer = TimerUtil.createSecondLaterTimer(timerService, timerConfig);
-    Helper.busyWait(1500); // 1.5 seconds later, should timer expires? No
+    Timer timer = TimerUtil.createTwoSecondsLaterTimer(timerService, timerConfig);
+    Helper.busyWait(2500); // 2.5 seconds later, should timer expires? No
     setRollbackOnly();
     commitTransaction();
     return "Created a timer within tx: " + timer + ". Set the tx to rollback.";

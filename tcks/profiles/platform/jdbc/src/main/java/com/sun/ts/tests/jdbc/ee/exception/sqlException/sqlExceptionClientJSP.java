@@ -53,6 +53,7 @@ import tck.arquillian.protocol.common.TargetVehicle;
 
 @Tag("tck-javatest")
 @Tag("web")
+@Tag("platform")
 public class sqlExceptionClientJSP extends sqlExceptionClient implements Serializable {
 	private static final String testName = "jdbc.ee.exception.sqlException";
 

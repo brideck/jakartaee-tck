@@ -53,7 +53,7 @@ import tck.arquillian.protocol.common.TargetVehicle;
  */
 
 @Tag("tck-appclient")
-
+@Tag("platform")
 public class callStmtClient8AppClient extends callStmtClient8 implements Serializable {
 	private static final String testName = "jdbc.ee.callStmt.callStmt8";
 

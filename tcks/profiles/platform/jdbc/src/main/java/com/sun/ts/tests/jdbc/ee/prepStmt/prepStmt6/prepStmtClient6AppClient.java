@@ -49,7 +49,7 @@ import tck.arquillian.protocol.common.TargetVehicle;
  */
 
 @Tag("tck-appclient")
-
+@Tag("platform")
 public class prepStmtClient6AppClient extends prepStmtClient6 implements Serializable {
 	private static final String testName = "jdbc.ee.prepStmt.prepStmt6";
 

@@ -51,6 +51,7 @@ import tck.arquillian.protocol.common.TargetVehicle;
 
 @Tag("tck-javatest")
 @Tag("web")
+@Tag("platform")
 public class dbMetaClient2Servlet extends dbMetaClient2 implements Serializable {
 	private static final String testName = "jdbc.ee.dbMeta.dbMeta2";
 

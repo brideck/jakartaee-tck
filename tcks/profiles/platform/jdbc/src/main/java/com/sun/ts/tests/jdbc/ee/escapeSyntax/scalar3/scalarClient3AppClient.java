@@ -51,7 +51,7 @@ import tck.arquillian.protocol.common.TargetVehicle;
  */
 
 @Tag("tck-appclient")
-
+@Tag("platform")
 public class scalarClient3AppClient extends scalarClient3 {
 	private static final String testName = "jdbc.ee.escapeSyntax";
 

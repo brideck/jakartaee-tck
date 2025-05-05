@@ -52,7 +52,7 @@ import tck.arquillian.protocol.common.TargetVehicle;
  */
 
 @Tag("tck-appclient")
-
+@Tag("platform")
 public class sqlExceptionClientEJB extends sqlExceptionClient implements Serializable {
 	private static final String testName = "jdbc.ee.exception.sqlException";
 

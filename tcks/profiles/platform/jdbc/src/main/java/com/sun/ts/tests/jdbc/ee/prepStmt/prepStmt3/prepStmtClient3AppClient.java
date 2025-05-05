@@ -48,7 +48,7 @@ import tck.arquillian.protocol.common.TargetVehicle;
  * @version 1.8, 11/24/00
  */
 @Tag("tck-appclient")
-
+@Tag("platform")
 public class prepStmtClient3AppClient extends prepStmtClient3 implements Serializable {
 	private static final String testName = "jdbc.ee.prepStmt.prepStmt3";
 

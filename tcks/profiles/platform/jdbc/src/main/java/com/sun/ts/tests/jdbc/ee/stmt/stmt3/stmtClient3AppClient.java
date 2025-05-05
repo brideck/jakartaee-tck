@@ -52,7 +52,7 @@ import tck.arquillian.protocol.common.TargetVehicle;
  */
 
 @Tag("tck-appclient")
-
+@Tag("platform")
 public class stmtClient3AppClient extends stmtClient3 implements Serializable {
 	private static final String testName = "jdbc.ee.stmt.stmt3";
 

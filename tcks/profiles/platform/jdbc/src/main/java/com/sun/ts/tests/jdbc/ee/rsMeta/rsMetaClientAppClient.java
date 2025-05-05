@@ -52,7 +52,7 @@ import tck.arquillian.protocol.common.TargetVehicle;
  */
 
 @Tag("tck-appclient")
-
+@Tag("platform")
 public class rsMetaClientAppClient extends rsMetaClient implements Serializable {
 	private static final String testName = "jdbc.ee.rsMeta";
 

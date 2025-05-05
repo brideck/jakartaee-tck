@@ -48,7 +48,7 @@ import tck.arquillian.protocol.common.TargetVehicle;
  * 
  */
 @Tag("tck-appclient")
-
+@Tag("platform")
 public class batchUpdateClientEJB extends batchUpdateClient implements Serializable {
 	private static final String testName = "jdbc.ee.batchUpdate";
 

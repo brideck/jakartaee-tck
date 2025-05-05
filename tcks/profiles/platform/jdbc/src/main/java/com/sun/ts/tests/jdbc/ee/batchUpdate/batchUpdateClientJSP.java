@@ -49,7 +49,7 @@ import tck.arquillian.protocol.common.TargetVehicle;
  */
 @Tag("tck-javatest")
 @Tag("web")
-
+@Tag("platform")
 public class batchUpdateClientJSP extends batchUpdateClient implements Serializable {
 	private static final String testName = "jdbc.ee.batchUpdate";
 

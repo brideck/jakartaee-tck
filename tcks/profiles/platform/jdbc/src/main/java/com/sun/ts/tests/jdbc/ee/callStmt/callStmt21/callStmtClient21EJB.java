@@ -53,7 +53,7 @@ import tck.arquillian.protocol.common.TargetVehicle;
  */
 
 @Tag("tck-appclient")
-
+@Tag("platform")
 public class callStmtClient21EJB extends callStmtClient21 implements Serializable {
 	private static final String testName = "jdbc.ee.callStmt.callStmt21";
 

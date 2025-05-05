@@ -51,7 +51,7 @@ import tck.arquillian.protocol.common.TargetVehicle;
  */
 
 @Tag("tck-appclient")
-
+@Tag("platform")
 public class callStmtClient9EJB extends callStmtClient9 implements Serializable {
 
 	@TargetsContainer("tck-appclient")

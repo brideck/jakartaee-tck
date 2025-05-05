@@ -52,7 +52,7 @@ import tck.arquillian.protocol.common.TargetVehicle;
  */
 
 @Tag("tck-appclient")
-
+@Tag("platform")
 public class dbMetaClient5EJB extends dbMetaClient5 implements Serializable {
 	private static final String testName = "jdbc.ee.dbMeta.dbMeta5";
 

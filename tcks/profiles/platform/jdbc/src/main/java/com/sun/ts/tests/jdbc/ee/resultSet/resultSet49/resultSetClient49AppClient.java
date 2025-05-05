@@ -52,7 +52,7 @@ import tck.arquillian.protocol.common.TargetVehicle;
  */
 
 @Tag("tck-appclient")
-
+@Tag("platform")
 public class resultSetClient49AppClient extends resultSetClient49 implements Serializable {
 	private static final String testName = "jdbc.ee.resultSet.resultSet49";
 

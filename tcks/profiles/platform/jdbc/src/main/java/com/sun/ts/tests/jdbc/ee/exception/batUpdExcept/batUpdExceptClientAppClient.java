@@ -52,7 +52,7 @@ import tck.arquillian.protocol.common.TargetVehicle;
  */
 
 @Tag("tck-appclient")
-
+@Tag("platform")
 public class batUpdExceptClientAppClient extends batUpdExceptClient implements Serializable {
 	private static final String testName = "jdbc.ee.exception.batUpdExcept";
 

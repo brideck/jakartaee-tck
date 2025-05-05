@@ -56,7 +56,7 @@ import tck.arquillian.protocol.common.TargetVehicle;
  */
 
 @Tag("tck-appclient")
-
+@Tag("platform")
 public class dateTimeClient1EJB extends dateTimeClient1 implements Serializable {
 	private static final String testName = "jdbc.ee.dateTime.dateTime1";
 

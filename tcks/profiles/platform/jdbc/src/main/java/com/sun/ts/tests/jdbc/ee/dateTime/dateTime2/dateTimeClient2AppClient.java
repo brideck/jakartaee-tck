@@ -52,7 +52,7 @@ import tck.arquillian.protocol.common.TargetVehicle;
  */
 
 @Tag("tck-appclient")
-
+@Tag("platform")
 public class dateTimeClient2AppClient extends dateTimeClient2 implements Serializable {
 	private static final String testName = "jdbc.ee.dateTime.dateTime2";
 
